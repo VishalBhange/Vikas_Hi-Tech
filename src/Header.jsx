@@ -6,10 +6,10 @@ export default function Header() {
 
   return (
     <div>
-      <nav className="flex justify-between items-center p-8 ml-10 font-medium">
+      <nav className="flex justify-between items-center p-3 ml-10 font-medium">
         {/* Logo */}
         <div>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWYUcjnIcA330uL5M4Xpt0-iENjWCmzvBYqQ&s" alt="Logo" className="h-10" />
+          <img src="https://vikashitechnursery.com/wp-content/uploads/2023/01/Vikas_web.png" alt="Logo" className="h-12 w-36 " />
         </div>
 
         {/* Desktop Navigation */}
@@ -56,7 +56,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-300">
+        <div className="md:hidden bg-white border-t border-gray-300 ">
           <a href="/" className="block px-4 py-2 text-gray-700 hover:bg-green-100">Home</a>
           <a href="/aboutUs" className="block px-4 py-2 text-gray-700 hover:bg-green-100">About Us</a>
 
@@ -85,5 +85,7 @@ export default function Header() {
         </div>
       )}
     </div>
+
+    
   );
 }
