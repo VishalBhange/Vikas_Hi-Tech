@@ -1,5 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { GiChestnutLeaf } from "react-icons/gi";
+import { IoPersonSharp } from "react-icons/io5";
+import { IoCloudDone } from "react-icons/io5";
+import { IoIosPeople } from "react-icons/io"; 
+import { GiStumpRegrowth } from "react-icons/gi";
+import { GiFarmer } from "react-icons/gi";
+import { SiRoamresearch } from "react-icons/si";
 
 
 export default function Home() {
@@ -9,6 +15,32 @@ export default function Home() {
     { id: 3, text: "Our Fresh & Organic Garden" },
     { id: 4, text: "Professional Team Member" },
   ];
+
+  const [cards, setCards] = useState([
+    {
+      id: 1,
+      title: "Technologically Grown",
+      description:
+        "Our seedlings are grown in a tissue culture environment and a scientifically controlled climate, ensuring improved outcomes.",
+      icon: <GiStumpRegrowth className="text-8xl text-white" />,
+    },
+    {
+      id: 2,
+      title: " Directing Farmers",
+      description:
+        "A successful partnership with farmers begins by educating them on adapting to changing climate and combating new diseases through the provision of innovative technology and high-yielding varieties, ultimately leading to increased profits for the farmers.",
+      icon: <GiFarmer className="text-8xl text-white" />,
+    },
+    {
+      id: 3,
+      title: " Outstanding Research",
+      description:
+        "Along with a tonne of passion, perseverance, and commitment, our highly qualified scientific staff members work at the forefront of research and bring a lot of research-based thinking to horticulture.",
+      icon: <SiRoamresearch className="text-8xl text-white" />,
+    },
+  ]);
+
+  
   return (
     <div>
     <div className="flex justify-center items-center bg-gray-100">
@@ -26,8 +58,8 @@ export default function Home() {
 
 
 
-<div className="flex justify-center items-center  bg-gray-100">
-      <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center bg-white shadow-lg rounded-lg p-16 gap-28">
+<div className="flex justify-center items-center  ">
+      <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center bg-white rounded-lg p-16 gap-28">
         {/* Left Section: Image */}
         <div className="relative w-96 h-96 mb-4 lg:mb-0 ">
           <img
@@ -97,32 +129,97 @@ export default function Home() {
     </div>
 
 
-    <div className="relative bg-cover bg-center h-[500px]" style={{ backgroundImage: "url('/https://www.shutterstock.com/shutterstock/videos/1106929567/thumb/1.jpg?ip=x480')" }}>
-      {/* Background Image Div */}
-      <div className=""></div>
+    <div className="relative mx-auto my-16 bg-cover bg-center h-auto w-full max-w-[90%] lg:max-w-[1000px] opacity-90 rounded-3xl" style={{ backgroundImage: "url('https://img.freepik.com/premium-photo/young-green-leaves-leaf-bud-tea-tree-plantation_185094-943.jpg')", backgroundAttachment: 'fixed' }}>
+  {/* Background Image Div */}
 
-      {/* Content Div */}
-      <div className="relative z-10 flex flex-col justify-center items-center h-full space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 px-4 text-center">
-          {/* Each Card */}
-          <div className="bg-white/90 p-6 rounded-md shadow-lg">
-            <h2 className="text-xl font-bold text-gray-800">Happy Clients</h2>
-            <p className="text-3xl font-extrabold text-green-600">1000+</p>
-          </div>
+  {/* Content Div */}
+  <div className="relative z-10 flex flex-col justify-center items-center h-full space-y-6 rounded-3xl bg-black/50 p-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      {/* Each Card */}
+      <div className="p-6 rounded-md shadow-lg  text-center  text-white">
+        <IoPersonSharp className="text-6xl mx-auto mb-4"/>
+        <h2 className="text-xl font-bold text-white">Happy Clients</h2>
+        <p className="text-2xl font-extrabold t text-white">1000+</p>
+      </div>
 
-          <div className="bg-white/90 p-6 rounded-md shadow-lg">
-            <h2 className="text-xl font-bold text-gray-800">Projects Completed</h2>
-            <p className="text-3xl font-extrabold text-green-600">1000+</p>
-          </div>
+      <div className="p-6 rounded-md shadow-lg  text-center text-white">
+        <IoCloudDone className="text-6xl mx-auto mb-4"/>
+        <h2 className="text-xl font-bold text-white">Projects Completed</h2>
+        <p className="text-2xl font-extrabold  text-white">1000+</p>
+      </div>
 
-          <div className="bg-white/90 p-6 rounded-md shadow-lg">
-            <h2 className="text-xl font-bold text-gray-800">No. of People</h2>
-            <p className="text-3xl font-extrabold text-green-600">300+</p>
-          </div>
+      <div className="p-6 rounded-md shadow-lg  text-center text-white">
+        <IoIosPeople className="text-6xl mx-auto mb-4"/>
+        <h2 className="text-xl font-bold text-white">No. of People</h2>
+        <p className="text-2xl font-extrabold text-white">300+</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+    <div className="flex justify-center items-center  bg-gray-100">
+      <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center bg-green-50 shadow-lg  p-10 gap-8">
+        {/* Left Section: Image */}
+        <div className="relative  mb-4 lg:mb-0 ">
+          <img
+            src="	https://vikashitechnursery.com/wp-content/uploads/2023/02/expertise.png" 
+            alt="Nursery"
+            className=" w-auto h-80"
+            loading="lazy"
+            decoding="async"
+            
+          />
+         
+        </div>
+
+        {/* Right Section: Text Content */}
+        <div className="flex-1 mr-26 lg:ml-6 ">
+          <h1 className="text-4xl font-bold   C">Our Expertise</h1>
+
+          
+      <div className="flex items-center  mb-">
+        <span className="w-12 h-1 bg-black"></span>
+        <GiChestnutLeaf className='C text-2xl'/>
+        <span className="w-12 h-1  bg-black"></span>
+      </div>
+    
+
+
+          <p className="text-lg text-gray-700 mt-4">
+          We retain the best scientists available globally for each of our products and specialize in producing premium quality products. Our growth rooms are climate-controlled and closely monitored to ensure optimal conditions, and they have the capacity to hold over 5 crore plants at any given time. The seedlings are fortified with high levels of nutrients to ensure their growth and development.
+          </p>
+
+          <button
+      className="C1 text-white font-bold py-2 px-4 rounded hover:bg-green-950 transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 mt-5"
+    >
+      Get A Quote
+    </button>          
         </div>
       </div>
     </div>
-  
+
+   
+    <div className="container mx-auto px-4 py-8 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mr-20 ml-20 ">
+        {cards.map((card) => (
+          <div key={card.id} className="C1  shadow-lg overflow-hidden rounded-tr-[80px] rounded-bl-[80px] ">
+            {/* Centered Icon */}
+            <div className="flex justify-center items-center h-32 ">
+              {card.icon}
+            </div>
+
+            {/* Card Content */}
+            <div className="items-center text-center p-4">
+              <h2 className="text-2xl font-bold mb-2 text-white">{card.title}</h2>
+              <p className="text-white mb-4   ">{card.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
 
 </div>
   )
