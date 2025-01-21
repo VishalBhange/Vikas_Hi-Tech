@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom"; 
 
 export default function AllProducts() {
   const [activeImage, setActiveImage] = useState(null);
 
-  // Define images, their names, and links
+ 
   const items = [
     {
       id: 1,
       name: "Dream Yellow",
       src: "https://vikashitechnursery.com/wp-content/uploads/2023/02/jpeg-optimizer_DSC_8124.jpg",
-      link: "/dream-yellow", // Updated to route path
+      link: "/dream-yellow", 
     },
     {
       id: 2,
@@ -65,7 +65,7 @@ export default function AllProducts() {
   return (
     <div className="container mx-auto py-16">
       {/* Image Animation Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mr-12 ml-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mr-12 ml-12 -mt-16">
         {items.map((item) => (
           <Link
             key={item.id}

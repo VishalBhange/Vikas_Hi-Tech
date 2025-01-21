@@ -1,29 +1,47 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
-export default function Watermelon() {
+export default function marigold2() {
   const [activeImage, setActiveImage] = useState(null);
 
   // Define images, their names, and links
   const items = [
     {
       id: 1,
-      name: "Vijay WaterMelon",
-      src: "	https://vikashitechnursery.com/wp-content/uploads/2023/02/IMG_7054-scaled.jpg",
+      name: "Dream Yellow",
+      src: "https://vikashitechnursery.com/wp-content/uploads/2023/02/jpeg-optimizer_DSC_8124.jpg",
       link: "/dream-yellow", // Updated to route path
     },
     {
       id: 2,
-      name: "Virat Watermelon",
-      src: "	https://vikashitechnursery.com/wp-content/uploads/2023/02/a03d9cfb-079e-4fe9-87f7-c40d6fa19bca.jpg",
-      link: "/sheavani-yellow",
-    }
+      name: "Shravani Yellow",
+      src: "https://vikashitechnursery.com/wp-content/uploads/2023/02/DSC_8165_11zon-scaled.jpg",
+      link: "/shravani-yellow",
+    },
+    {
+      id: 3,
+      name: "Yash Yellow",
+      src: "https://vikashitechnursery.com/wp-content/uploads/2023/02/img5.jpeg",
+      link: "/yash-yellow",
+    },
+    {
+      id: 4,
+      name: "Yash Orange",
+      src: "https://vikashitechnursery.com/wp-content/uploads/2023/02/IMG_2601-scaled.jpg",
+      link: "/yash-orange",
+    },
+    {
+      id: 5,
+      name: "Prime Orange",
+      src: "https://vikashitechnursery.com/wp-content/uploads/2023/02/IMG-6046-scaled.jpg",
+      link: "/prime-orange",
+    },
   ];
 
   return (
     <div className="container mx-auto py-16">
       {/* Image Animation Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mr-12 ml-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mr-12 ml-12 -mt-16">
         {items.map((item) => (
           <Link
             key={item.id}

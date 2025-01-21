@@ -1,5 +1,6 @@
 import React from 'react'
 import { GiChestnutLeaf } from "react-icons/gi";
+import { useEffect,useState } from 'react';
 
 export default function WelcomeToVikas() {
      const features = [
@@ -8,6 +9,17 @@ export default function WelcomeToVikas() {
         { id: 3, text: "Our Fresh & Organic Garden" },
         { id: 4, text: "Professional Team Member" },
       ];
+
+      const [count, setCount] = useState(0);
+
+      useEffect(() => {
+        if (count <= 1996) {
+          const timer = setTimeout(() => {
+            setCount(count + 1);
+          }, 1); 
+          return () => clearTimeout(timer); // Cleanup timer
+        }
+      }, [count]);
   return (
     <div>
         <div className="flex justify-center items-center  ">
@@ -19,10 +31,11 @@ export default function WelcomeToVikas() {
                     alt="Nursery"
                     className="rounded-full object-cover w-full h-full"
                   />
-                  <div className="absolute top-0 right-0 bg-green-500 text-white rounded-full px-4 py-5 text-center C1">
-                    <span className="text-lg font-semibold">1997</span>
-                    <p className="text-xs">Trusted By</p>
-                  </div>
+                   <div className="absolute top-0 right-0 bg-green-500 text-white rounded-full px-4 py-5 text-center C1">
+      <span className="text-lg font-semibold">{count}</span>
+      <p className="text-xs">Trusted By
+      </p>
+    </div>
                 </div>
         
                 {/* Right Section: Text Content */}
@@ -31,9 +44,9 @@ export default function WelcomeToVikas() {
         
                   
               <div className="flex items-center  mb-">
-                <span className="w-12 h-1 bg-black"></span>
+                <span className="w-12 h-0.5 bg-black"></span>
                 <GiChestnutLeaf className='C text-2xl'/>
-                <span className="w-12 h-1  bg-black"></span>
+                <span className="w-12 h-0.5  bg-black"></span>
               </div>
             
         

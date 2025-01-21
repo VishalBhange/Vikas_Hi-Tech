@@ -32,13 +32,13 @@ export default function WhyUs() {
          
         
           {/* Content Div */}
-          <div className="relative z-10 flex flex-col justify-center items-center h-full gap-2 bg-black/50 p-6 pb-16">
+          <div className="relative z-10 flex flex-col justify-center items-center h-full gap-2 bg-black/50 p-5 pb-16">
             
-          <h2 className="text-4xl font-bold text-white mt-9 ">Why Us</h2>
-                <div className="flex items-center justify-center ">
-                  <span className="w-16 h-1 bg-white"></span>
+          <h2 className="text-4xl font-bold text-white mt-  ">Why Us</h2>
+                <div className="flex items-center justify-center mb-16">
+                  <span className="w-16 h-0.5 bg-white"></span>
                   <GiChestnutLeaf className='text-2xl C '/>
-                  <span className="w-16 h-1 bg-white"></span>
+                  <span className="w-16 h-0.5 bg-white"></span>
                 </div>
           </div>
         
@@ -50,7 +50,7 @@ export default function WhyUs() {
         
         
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mr-9 ml-9">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mr-9 ml-9 -mt-36 mb-16">
             {card1.map((card) => (
               <div
                 key={card.id}

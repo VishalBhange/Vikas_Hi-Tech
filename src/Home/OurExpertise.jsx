@@ -25,9 +25,9 @@ export default function OurExpertise() {
         
                   
               <div className="flex items-center  mb-">
-                <span className="w-12 h-1 bg-black"></span>
+                <span className="w-12 h-0.5 bg-black"></span>
                 <GiChestnutLeaf className='C text-2xl'/>
-                <span className="w-12 h-1  bg-black"></span>
+                <span className="w-12 h-0.5  bg-black"></span>
               </div>
             
         
@@ -37,7 +37,7 @@ export default function OurExpertise() {
                   </p>
         
                   <button
-              className="C1 text-white font-bold py-2 px-4 rounded hover:bg-green-950 transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 mt-5"
+              className="C1 text-white font-bold py-2 px-4 rounded hover:bg-green-950 transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 rounded-full rounded-tl-[70px] mt-5"
             >
               Get A Quote
             </button>          

@@ -6,6 +6,9 @@ import OurExpertise from './OurExpertise';
 import TechnologicallyGrown from './TechnologicallyGrown';
 import WhyUs from './WhyUs';
 import SeeOurProducts from './SeeOurProducts';
+import OurNurseryProcess from './OurNurseryProcess';
+import Slider from './Slider';
+import Footer from '../Footer';
 
 
 export default function Home() {
@@ -37,6 +40,12 @@ export default function Home() {
 <WhyUs/>
 
 <SeeOurProducts/>
+
+<OurNurseryProcess/>
+
+<Slider/>
+
+<Footer/>
 
 
 </div>

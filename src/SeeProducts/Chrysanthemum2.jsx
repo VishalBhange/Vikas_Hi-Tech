@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link for routing
+import { Link } from "react-router-dom";  
 
-export default function Chrysanthemum() {
+export default function chrysanthemum2() {
   const [activeImage, setActiveImage] = useState(null);
 
   // Define images and their names
