@@ -143,7 +143,7 @@ export default function Footer() {
           and Developed By{" "}
           <a
             href="https://vm3techsolution.com/"
-            className="text-white font-semibold"
+            className="text-[#6BB327] font-semibold"
           >
             VM3 Tech Solutions LLP
           </a>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
 import { GiChestnutLeaf } from "react-icons/gi";
-
 import AllProducts from "../SeeProducts/AllProducts";
 import Marigold2 from "../SeeProducts/Marigold2";
 import Chrysanthemum2 from "../SeeProducts/Chrysanthemum2";
@@ -11,10 +10,10 @@ export default function SeeOurProducts() {
   const [activeLink, setActiveLink] = useState("ALL");
 
   const links = [
-    { name: "ALL", path: "/" },
-    { name: "MARIGOLD", path: "/marigold2" },
-    { name: "CHRYSANTHEMUM", path: "/chrysanthemum2" },
-    { name: "WATERMELON", path: "/watermelon2" },
+    { name: "ALL", path: "" },
+    { name: "MARIGOLD", path: "marigold2" },
+    { name: "CHRYSANTHEMUM", path: "chrysanthemum2" },
+    { name: "WATERMELON", path: "watermelon2" },
   ];
 
   return (
@@ -49,13 +48,13 @@ export default function SeeOurProducts() {
         ))}
       </nav>
 
-      {/* Routes Section */}
+      {/* Nested Routes Section */}
       <main className="container mx-auto px-4 py-6">
         <Routes>
-          <Route path="/" element={<AllProducts />} />
-          <Route path="/marigold2" element={<Marigold2 />} />
-          <Route path="/chrysanthemum2" element={<Chrysanthemum2 />} />
-          <Route path="/watermelon2" element={<Watermelon2 />} />
+          <Route index element={<AllProducts />} />
+          <Route path="marigold2" element={<Marigold2 />} />
+          <Route path="chrysanthemum2" element={<Chrysanthemum2 />} />
+          <Route path="watermelon2" element={<Watermelon2 />} />
         </Routes>
       </main>
     </div>

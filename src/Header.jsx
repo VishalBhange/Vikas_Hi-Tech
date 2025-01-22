@@ -7,7 +7,7 @@ export default function Header() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <div>
+    <div className='shadow-md shadow-gray-400'>
       <nav className="flex justify-between items-center p-3 ml-10 font-medium relative">
         {/* Logo */}
         <div>

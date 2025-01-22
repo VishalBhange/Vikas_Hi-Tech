@@ -5,14 +5,14 @@ export default function OurNurseryProcess() {
   const [activeStep, setActiveStep] = useState("");
 
   const steps = [
-    { id: "Step_3", label: "Sowing Seeds", color: "border-4 border-yellow-500" },
-    { id: "Step_4", label: "Hardening", color: "border-4 border-yellow-500" },
+    { id: "Step_3", label: "Sowing Seeds", color: "border-4 border-yellow-100" },
+    { id: "Step_4", label: "Hardening", color: "border-4 border-yellow-900" },
     { id: "Step_5", label: "Sorting", color: "border-4 border-green-500" },
     { id: "Step_6", label: "Expert Guidance", color: "border-4 border-blue-500" },
-    { id: "Step_7", label: "Shipping and provision", color: "border-4 border-indigo-500" },
+    { id: "Step_7", label: "Shipping and provision", color: "border-4 border-red-500" },
     { id: "Step_8", label: "Replanting in the primary field", color: "border-4 border-purple-500" },
-    { id: "Step_1", label: "Manufacturing of Trays", color: "border-4 border-orange-500" },
-    { id: "Step_2", label: "Media (Cocopeat) preparation", color: "border-4 border-orange-500" },
+    { id: "Step_1", label: "Manufacturing of Trays", color: "border-4 border-orange-700" },
+    { id: "Step_2", label: "Media (Cocopeat) preparation", color: "border-4 border-orange-400" },
   ];
   
   return (
@@ -36,8 +36,8 @@ export default function OurNurseryProcess() {
           <div className="w-52 h-52 rounded-full flex items-center justify-center shadow-2xl mb-36 ml-4 border border-black">
 
             <div
-              className={`w-32 h-32 rounded-full flex items-center justify-center text-lg font-semibold  ${
-                activeStep ? "bg-green-500 text-white" : "bg-white text-gray-500"
+              className={`w-44 h-44 rounded-full flex items-center justify-center text-lg font-semibold  ${
+                activeStep ? "bg-[#6BB239] text-white text-center" : "bg-white text-gray-500"
               }`}
             >
               {activeStep || ""}

@@ -56,7 +56,7 @@ const SimpleSlider = () => {
       <div className="relative w-full max-w-4xl mx-auto px-4">
         <button
           onClick={handlePrev}
-          className="absolute left-2 sm:left-6 top-1/2 transform -translate-y-1/2 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 focus:outline-none"
+          className="absolute left-2 sm:left-6 top-1/2 transform -translate-y-1/2  text-gray-200 p-3 rounded-full  hover:bg-green-700 focus:outline-none"
         >
           &lt;
         </button>
@@ -76,7 +76,7 @@ const SimpleSlider = () => {
 
         <button
           onClick={handleNext}
-          className="absolute right-2 sm:right-6 top-1/2 transform -translate-y-1/2 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 focus:outline-none"
+          className="absolute right-2 sm:right-6 top-1/2 transform -translate-y-1/2  text-gray-200 p-3 rounded-full  hover:bg-green-700 focus:outline-none"
         >
           &gt;
         </button>

@@ -5,10 +5,11 @@ import HappyClient from './HappyClient';
 import OurExpertise from './OurExpertise';
 import TechnologicallyGrown from './TechnologicallyGrown';
 import WhyUs from './WhyUs';
-import SeeOurProducts from './SeeOurProducts';
+
 import OurNurseryProcess from './OurNurseryProcess';
 import Slider from './Slider';
 import Footer from '../Footer';
+import SeeOurProducts from '../SeeProducts/SeeOurProducts';
 
 
 export default function Home() {
