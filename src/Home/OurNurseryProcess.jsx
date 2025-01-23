@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GiChestnutLeaf } from "react-icons/gi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function OurNurseryProcess() {
+    const [activeImage, setActiveImage] = useState(null);
+     useEffect(() => {
+        AOS.init({
+          duration: 1000, 
+          once: true, 
+        });
+      }, []);
+
   const [activeStep, setActiveStep] = useState("");
 
   const steps = [
@@ -29,17 +39,22 @@ export default function OurNurseryProcess() {
 
       {/* Diagram */}
       <div className="flex flex-col items-center">
-        <div className="relative w-96 h-96">
+        <div className="relative w-96 h-96"
+         onMouseEnter={() => setActiveImage(item.name)}
+         onMouseLeave={() => setActiveImage(null)}
+         data-aos="flip-left" data-aos-duration="1200" data-aos-delay="100"
+         >
           {/* Center Circle */}
           <div className="absolute inset-0 flex items-center justify-center">
 
-          <div className="w-52 h-52 rounded-full flex items-center justify-center shadow-2xl mb-36 ml-4 border border-black">
+          <div className="w-52 h-52 rounded-full flex items-center justify-center shadow-2xl mb-36 ml-4 border border-black"
+          >
 
             <div
               className={`w-44 h-44 rounded-full flex items-center justify-center text-lg font-semibold  ${
                 activeStep ? "bg-[#6BB239] text-white text-center" : "bg-white text-gray-500"
               }`}
-            >
+                         >
               {activeStep || ""}
             </div>
             </div>
@@ -59,6 +74,7 @@ export default function OurNurseryProcess() {
                 style={{
                   transform: `translate(${x}px, ${y}px)`,
                 }}
+                
               >
                 {step.id}
               </button>

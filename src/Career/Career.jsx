@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Career1 from "./Career1";
 import Career2 from "./Career2";
@@ -9,8 +9,18 @@ import Career6 from "./Career6";
 import Career7 from "./Career7";
 import Career8 from "./Career8";
 import Footer from "../Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Career = () => {
+   const [activeImage, setActiveImage] = useState(null);
+     useEffect(() => {
+        AOS.init({
+          duration: 1000, 
+          once: true, 
+        });
+      }, []);
+
   const cards = [
     {
       title: "Executive Assistant",
@@ -89,6 +99,9 @@ const Career = () => {
         <div
           key={index}
           className="bg-white  shadow-gray-400 shadow-md hover:shadow-xl p-7 transition duration-300"
+          onMouseEnter={() => setActiveImage(item.name)}
+              onMouseLeave={() => setActiveImage(null)}
+              data-aos="flip-right"
         >
           <h3 className="text-2xl text-gray-500 font-bold mb-2">{card.title}</h3>
           <p className="text-gray-600 text-sm mb-4 pt-3 p-">{card.description}</p>

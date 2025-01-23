@@ -3,11 +3,22 @@ import { IoPersonSharp } from "react-icons/io5";
 import { IoCloudDone } from "react-icons/io5";
 import { IoIosPeople } from "react-icons/io"; 
 import { useEffect,useState } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 
 
 export default function HappyClient() {
+
+  const [activeImage, setActiveImage] = useState(null);
+         useEffect(() => {
+            AOS.init({
+              duration: 1000, 
+              once: true, 
+            });
+          }, []);  
+
    const [count, setCount] = useState(0);
   
         useEffect(() => {
@@ -31,12 +42,16 @@ export default function HappyClient() {
         }, [count1]);
   return (
     <div>
-        <div className="relative mx-auto my-16 bg-cover bg-center h-auto w-full max-w-[90%] lg:max-w-[1000px] opacity-90 rounded-3xl" style={{ backgroundImage: "url('https://img.freepik.com/premium-photo/young-green-leaves-leaf-bud-tea-tree-plantation_185094-943.jpg')", backgroundAttachment: 'fixed' }}>
+        <div className="relative mx-auto my-16 bg-cover bg-center h-auto w-full max-w-[90%] lg:max-w-[1000px] opacity-90 rounded-3xl" style={{ backgroundImage: "url('https://img.freepik.com/premium-photo/young-green-leaves-leaf-bud-tea-tree-plantation_185094-943.jpg')", backgroundAttachment: 'fixed' }}
+        >
   {/* Background Image Div */}
 
   {/* Content Div */}
   <div className="relative z-10 flex flex-col justify-center items-center h-full space-y-6 rounded-3xl bg-black/50 p-6">
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"  
+  onMouseEnter={() => setActiveImage(item.name)}
+              onMouseLeave={() => setActiveImage(null)}
+              data-aos="flip-up">
     {/* Card 1 */}
     <div className="p-6 rounded-md shadow-lg text-center text-white lg:border-r-2 lg:border-gray-50">
       <IoPersonSharp className="text-6xl mx-auto mb-4" />

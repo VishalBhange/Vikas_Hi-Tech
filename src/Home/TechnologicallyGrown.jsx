@@ -1,9 +1,20 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { GiStumpRegrowth } from "react-icons/gi";
 import { GiFarmer } from "react-icons/gi";
 import { SiRoamresearch } from "react-icons/si";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function TechnologicallyGrown() {
+
+  const [activeImage, setActiveImage] = useState(null);
+           useEffect(() => {
+              AOS.init({
+                duration: 1000, 
+                once: true, 
+              });
+            }, []);  
+
     const [cards, setCards] = useState([
         {
           id: 1,
@@ -33,7 +44,10 @@ export default function TechnologicallyGrown() {
         <div className="container mx-auto px-4 py-8 ">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mr-20 ml-20 ">
                 {cards.map((card) => (
-                  <div key={card.id} className="C1  shadow-lg overflow-hidden rounded-tr-[70px] rounded-bl-[70px] ">
+                  <div key={card.id} className="C1  shadow-lg overflow-hidden rounded-tr-[70px] rounded-bl-[70px] "
+                  onMouseEnter={() => setActiveImage(item.name)}
+                  onMouseLeave={() => setActiveImage(null)}
+                  data-aos="flip-right">
                     {/* Centered Icon */}
                     <div className="flex justify-center items-center h-32 ">
                       {card.icon}

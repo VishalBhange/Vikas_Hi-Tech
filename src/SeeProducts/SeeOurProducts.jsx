@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { GiChestnutLeaf } from "react-icons/gi";
+import { Link } from "react-router-dom";
 import AllProducts from "../SeeProducts/AllProducts";
 import Marigold2 from "../SeeProducts/Marigold2";
 import Chrysanthemum2 from "../SeeProducts/Chrysanthemum2";
@@ -10,16 +11,16 @@ export default function SeeOurProducts() {
   const [activeLink, setActiveLink] = useState("ALL");
 
   const links = [
-    { name: "ALL", path: "" },
-    { name: "MARIGOLD", path: "marigold2" },
-    { name: "CHRYSANTHEMUM", path: "chrysanthemum2" },
-    { name: "WATERMELON", path: "watermelon2" },
+    { name: "ALL", path: "/" },
+    { name: "MARIGOLD", path: "/marigold2" },
+    { name: "CHRYSANTHEMUM", path: "/chrysanthemum2" },
+    { name: "WATERMELON", path: "/watermelon2" },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-green-100 via-yellow-100 to-pink ">
       {/* Header Section */}
-      <header className="relative z-10 flex flex-col justify-center items-center h-auto gap-4 p-6 bg-gradient-to-b from-green-200 via-green-100 to-white text-center">
+      <header className=" z-10 flex flex-col justify-center items-center h-auto gap-4 p-6 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-6">
           See Our Products
         </h2>
@@ -48,13 +49,13 @@ export default function SeeOurProducts() {
         ))}
       </nav>
 
-      {/* Nested Routes Section */}
+      {/* Routes Section */}
       <main className="container mx-auto px-4 py-6">
         <Routes>
-          <Route index element={<AllProducts />} />
-          <Route path="marigold2" element={<Marigold2 />} />
-          <Route path="chrysanthemum2" element={<Chrysanthemum2 />} />
-          <Route path="watermelon2" element={<Watermelon2 />} />
+          <Route path="/" element={<AllProducts />} />
+          <Route path="/marigold2" element={<Marigold2 />} />
+          <Route path="/chrysanthemum2" element={<Chrysanthemum2 />} />
+          <Route path="/watermelon2" element={<Watermelon2 />} />
         </Routes>
       </main>
     </div>

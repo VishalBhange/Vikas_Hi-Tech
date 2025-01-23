@@ -1,16 +1,24 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom"; 
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function AllProducts() {
   const [activeImage, setActiveImage] = useState(null);
 
- 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true, // Whether animation should happen only once
+    });
+  }, []);
+
   const items = [
     {
       id: 1,
       name: "Dream Yellow",
       src: "https://vikashitechnursery.com/wp-content/uploads/2023/02/jpeg-optimizer_DSC_8124.jpg",
-      link: "/dream-yellow", 
+      link: "/dream-yellow",
     },
     {
       id: 2,
@@ -69,10 +77,11 @@ export default function AllProducts() {
         {items.map((item) => (
           <Link
             key={item.id}
-            to={item.link} // Link for client-side routing
+            to={item.link}
             onMouseEnter={() => setActiveImage(item.name)}
             onMouseLeave={() => setActiveImage(null)}
             className="relative group cursor-pointer"
+            data-aos="flip-left" // AOS Animation
           >
             {/* Image */}
             <img
@@ -81,9 +90,7 @@ export default function AllProducts() {
               className="w-full h-80 object-cover shadow-lg transform transition-all duration-500"
             />
             {/* Overlay for Animation */}
-            <div
-              className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
-            >
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
               <p className="text-white text-5xl font-semibold">{item.name}</p>
             </div>
           </Link>

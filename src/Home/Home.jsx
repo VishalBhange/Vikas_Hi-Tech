@@ -10,6 +10,7 @@ import OurNurseryProcess from './OurNurseryProcess';
 import Slider from './Slider';
 import Footer from '../Footer';
 import SeeOurProducts from '../SeeProducts/SeeOurProducts';
+import ProductAnimation from './ProductAnimation';
 
 
 export default function Home() {
@@ -23,9 +24,9 @@ export default function Home() {
     className="w-full aspect-video shadow-lg"
     src="https://www.youtube-nocookie.com/embed/YvgtKS8__fg?autoplay=1&controls=0&rel=0&playsinline=1"
     frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowFullScreen
-    title="YouTube Video"
+    title="Video"
   ></iframe>
 </div>
 
@@ -39,6 +40,8 @@ export default function Home() {
 <TechnologicallyGrown/>
 
 <WhyUs/>
+
+<ProductAnimation/>
 
 <SeeOurProducts/>
 

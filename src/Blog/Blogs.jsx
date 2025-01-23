@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CardGrid = () => {
+   const [activeImage, setActiveImage] = useState(null);
+       useEffect(() => {
+          AOS.init({
+            duration: 1000, 
+            once: true, 
+          });
+        }, []); 
+
   const cards = [
     {
       image: "https://vikashitechnursery.com/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-06-at-3.38.48-PM-1.jpeg",
@@ -95,6 +105,9 @@ const CardGrid = () => {
         <div
           key={index}
           className="bg-white border rounded-sm shadow-md shadow-gray-300 hover:shadow-2xl transition duration-300"
+          onMouseEnter={() => setActiveImage(item.name)}
+              onMouseLeave={() => setActiveImage(null)}
+              data-aos="flip-up"
         >
           {/* Image Section */}
           <img

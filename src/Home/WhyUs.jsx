@@ -1,7 +1,19 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import { GiChestnutLeaf } from "react-icons/gi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function WhyUs() {
+
+   const [activeImage, setActiveImage] = useState(null);
+             useEffect(() => {
+                AOS.init({
+                  duration: 1000, 
+                  once: true, 
+                });
+              }, []);  
+
+
      const card1 = [
         {
           id: 1,
@@ -28,7 +40,8 @@ export default function WhyUs() {
   return (
     <div>
         {/* Background Image Div */}
-           <div className="relative mx-auto my-16 bg-cover bg-center lg:max-w-[1300px] opacity-60" style={{ backgroundImage: "url('https://i0.wp.com/practicalselfreliance.com/wp-content/uploads/2021/03/Growing-Tomatoes-from-Seed-1.jpg?fit=1200%2C800&ssl=1')" }}>
+           <div className="relative mx-auto my-16 bg-cover bg-center lg:max-w-[1300px] opacity-60" style={{ backgroundImage: "url('https://i0.wp.com/practicalselfreliance.com/wp-content/uploads/2021/03/Growing-Tomatoes-from-Seed-1.jpg?fit=1200%2C800&ssl=1')" }}
+           >
          
         
           {/* Content Div */}
@@ -55,6 +68,9 @@ export default function WhyUs() {
               <div
                 key={card.id}
                 className="bg-gray-100 rounded-3xl shadow-2xl overflow-hidden transform"
+                onMouseEnter={() => setActiveImage(item.name)}
+           onMouseLeave={() => setActiveImage(null)}
+           data-aos="flip-down"
               >
                 {/* Top Image */}
                 <div className="flex justify-center mt-3">
